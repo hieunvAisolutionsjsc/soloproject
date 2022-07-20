@@ -1,23 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-
+import icon from "./img/earth-globe_icon-icons.com_70179.png" ; 
+ 
+import data from "./data"
+import Card from './components/Card/index';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='top'>
+<img src={icon} alt="" />
+     <p>my travel journal.</p>
+      </div>
+      <div className='listcard'>
+    {
+      data.map((item , index)=>{
+        return <Card 
+        key ={index}
+        {...item}
+
+        />
+      })
+    }
+    </div>
     </div>
   );
 }
